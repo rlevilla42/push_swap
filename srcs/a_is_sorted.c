@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   a_is_sorted.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 00:43:26 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/05 20:15:40 by rlevilla         ###   ########.fr       */
+/*   Created: 2023/02/05 19:31:47 by rlevilla          #+#    #+#             */
+/*   Updated: 2023/02/05 20:13:58 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	a_is_sorted(int *tab, int size)
 {
-	int	*tab;
-	static int	*tab_final;
-	static int	size;
+	int	i;
 
-	if (ft_check_error(argc, argv) == 0)
-		return (0);
-	size = size_tab(argc, argv);
-	tab = ft_input(argc, argv);
-	tab_final = final_tab(tab, size);
-	if (a_is_sorted(tab_final, size) == 1)
-		return (0);
-	ft_putint_str(tab_final);
-	return (0);
+	i = 0;
+	while (i < size - 1)
+	{
+		if (tab[i] > tab[i + 1])
+			return (0);
+		else
+			i++;
+	}
+	return (1);
 }

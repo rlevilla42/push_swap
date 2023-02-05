@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 19:28:06 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/04 19:17:55 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/05 20:16:59 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int	ft_check_error(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (0);
 	}
-	printf("ALL Perfecto !");
+	//printf("ALL Perfecto !");
 	return (1);
 }
