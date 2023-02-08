@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a_is_sorted.c                                      :+:      :+:    :+:   */
+/*   sa_swap_a.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 19:31:47 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/07 17:11:07 by rlevilla         ###   ########.fr       */
+/*   Created: 2023/02/07 16:37:06 by rlevilla          #+#    #+#             */
+/*   Updated: 2023/02/07 18:47:55 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	a_is_sorted(int *tab, int size)
+int	*sa_swap_a(int *tab)
 {
-	int	i;
+	  int	i;
+	  int	temp;
 
-	i = 0;
-	if (ft_tabsize(tab) == 1)
-	{
-		ft_printf("c deja trier bro\n");
-		return (1);
-	}
-	while (i < size - 1)
-	{
-		if (tab[i] > tab[i + 1])
-			return (0);
-		else
-			i++;
-	}
-	return (1);
+	  i = 0;
+	  temp = tab[i];
+	  tab[i] = tab[i + 1];
+	  tab[i + 1] = temp;
+	  return (tab);
+}
+
+int	main(void)
+{
+	int	tab[] = {66, 0, -17, 999, -666, 12345, -1};
+	ft_putint(tab, 6);
+	sa_swap_a(tab);
+	ft_putint(tab, 6);
 }

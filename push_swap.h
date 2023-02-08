@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:59:53 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/05 20:13:33 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:51:05 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ int		*ft_convert_tab_to_index(int *tab, int size);
 int		*final_tab(int *tab, int size);
 int		*ft_sort_tabcpy(int *tab, int size);
 int		a_is_sorted(int *tab, int size);
+int		ft_tabsize(int *tab);
+int		*swap(int *tab);
 
 #endif
