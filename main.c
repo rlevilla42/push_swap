@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:43:26 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/19 23:08:33 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/21 23:39:17 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,19 @@ int	main(int argc, char **argv)
 	ft_putint_str(stack_b);
 	return (0);
 }*/
-/*
+
 int	main(int argc, char **argv)
 {
 	t_stack	a;
 
 	if (ft_check_error(argc, argv) == 0)
 		return (0);
-	flag = 0;
-	size_a = size_tab(argc, argv);
-	stack_a = final_tab(argc, argv, size_a);
-	if (a_is_sorted(stack_a, size_a))
+	a.size = ft_ptrsize_tab(argc, argv);
+	ft_printf("%d\n", a.size[0]);
+	a.tab = final_tab(argc, argv, a.size[0]);
+	if (a_is_sorted(a.tab, a.size[0]) == 1)
 		return (0);
-	ft_putint(stack_a, size_a);
+	ft_putint(a.tab, a.size[0]);
 	ft_printf("\n");
-}*/
+	return (0);
+}

@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putint.c                                        :+:      :+:    :+:   */
+/*   ft_ptrsize_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 23:25:58 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/21 22:48:01 by rlevilla         ###   ########.fr       */
+/*   Created: 2023/02/21 22:30:09 by rlevilla          #+#    #+#             */
+/*   Updated: 2023/02/21 22:37:25 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_putint(int *tab, int size)
+int	*ft_ptrsize_tab(int argc, char **argv)
 {
-	int	i;
+	int	j;
+	char	**pstr;
+	int	*size;
 
-	i = 0;
-	while (i < size)
-	{
-		ft_printf("tab[%d] = %d\n", i, tab[i]);
-		i++;
-		if (i > 20)
-			return ;
-	}
-	//ft_printf("BONUS + 1 :tab[%d] = %d\n", i, tab[i]);
+	size = (int *)malloc(sizeof(int) * 1);
+	j = 0;
+	if (argc == 2)
+		pstr = one_str_to_split(argv[1]);
+	else
+		pstr = argv_to_split(argc, argv);
+	while (pstr[j] != NULL)
+		j++;
+	size[0] = j;
+	return (size);
 }
+/*
+int main(int argc, char **argv)
+{
+	t_stack	a;
+
+	a.size = ft_ptrsize_tab(argc, argv);
+	ft_printf("%d\n", a.size[0]);
+}*/

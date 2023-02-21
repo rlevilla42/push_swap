@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 20:26:52 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/19 20:44:54 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/21 23:02:23 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,17 @@ int	*ft_convert_tab_to_index(int *tab, int size_a)
 	free(tab2);
 	return (tab);
 }
+/*
+int	*final_tab(int argc, char **argv, t_stack a)
+{
+	int	*tab_input;
+	int	*tab_final;
 
+	tab_input = ft_input(argc, argv);
+	tab_final = ft_convert_tab_to_index(tab_input, size_a);
+	return (tab_final);
+}
+*/
 int	*final_tab(int argc, char **argv, int size_a)
 {
 	int	*tab_input;
@@ -97,15 +107,27 @@ int	*final_tab(int argc, char **argv, int size_a)
 /*
 int	main(int argc, char **argv)
 {
-	int	*stack_a;
-	int	*stack_b;
-	static int	size_a;
+	t_stack	a;
 
-	size_a = size_tab(argc, argv);
-	stack_a = final_tab(argc, argv, size_a);
-	stack_b = (int *)malloc(sizeof(int) * (size_a + 1));
-	ft_putint(stack_a, size_a);
-	pb_push_b(stack_a, stack_b, size_a);
+	if (ft_check_error(argc, argv) == 0)
+		return (0);
+	a.size = ft_ptrsize_tab(argc, argv);
+	ft_printf("%d\n", a.size[0]);
+	a.tab = final_tab(argc, argv, a.size[0]);
+	//if (a_is_sorted(a.tab, a.size[0]))
+		//return (0);
+	ft_putint(a.tab, a.size[0]);
+	ft_printf("\n");
+	return (0);
+}
+*/
+/*
+int	main(int argc, char **argv)
+{	
+	t_stack	a;
+	a.size = ft_ptrsize_tab(argc, argv);
+	a.tab = final_tab(argc, argv, a.size[0]);
+	ft_putint(a.tab, a.size[0]);
 	return (0);
 }
 */
