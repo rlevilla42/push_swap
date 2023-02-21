@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:59:53 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/21 13:25:06 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/21 22:02:56 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ int		*final_tab(int argc, char **argv, int size_a);
 int		*ft_sort_tabcpy(int *tab, int size_a);
 int		a_is_sorted(int *tab, int size);
 int		ft_tabsize(int *tab);
-void	sa_swap_a(int *tab);
-void	sb_swap_b(int *tab);
-void	ss_swap_ss(int *tab1, int  *tab2);
+void	swap_a(t_stack a);
+void	swap_b(t_stack b);
+void	ss_swap_ss(t_stack a, t_stack b);
 void	pb_push_b(t_stack a, t_stack b);
 void	pa_push_a(t_stack a, t_stack b);
 
