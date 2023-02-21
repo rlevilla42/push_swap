@@ -6,135 +6,171 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:26:51 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/21 15:13:36 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/21 21:39:22 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-void	pa_push_a(int *tab1, int *tab2, int size_a)
-{
-	int	i;
-	int	size_b;
 
-	//i = ft_tabsize(tab1);
-	i = size_a;
-	while (i >= 0)
-	{
-		tab1[i + 1] = tab1[i];
-		i -= 1;
-	}
-	tab1[0] = tab2[0];
-	i = 0;
-	size_b = ft_tabsize(tab2);
-	while (i <= size_b)
-	{
-		//ft_printf("i = %d\n", i);
-		tab2[i] = tab2[i + 1];
-		//ft_printf("tab[%d] = %d\n", i, tab2[i]);
-		i++;
-	}
-	//ft_printf("tab2[%d] = %d\n\n", i, tab2[i]);
-	size_a++;
-	ft_printf("pa\n");
-}
-*/
-void	stack_who_pushed(t_stack x)
+void	aff_a(t_stack a)
 {
 	int	i;
-	int	last_index;
 
 	i = 0;
-	while (i < x.size[0])
+	ft_printf("a.size[0] = %d\n\n", a.size[0]);
+	while (i < a.size[0])
 	{
-		x.tab[i] = x.tab[i + 1];
+		ft_printf("a.tab[%d] = %d\n", i, a.tab[i]);
 		i++;
 	}
-	x.size[0] -= 1;
-	last_index = x.size[0];
-	x.tab[last_index] = 0;
+	ft_printf("\n");
 }
 
-void	stack_who_been_pushed(t_stack y, t_stack z)
+void	aff_b(t_stack b)
 {
 	int	i;
 
-	i = z.size[0] - 1;
+	i = 0;
+	ft_printf("b.size[0] = %d\n\n", b.size[0]);
+	if (b.size[0] == 0)
+	{
+		ft_printf("b.tab[%d] = %d\n", i, b.tab[i]);
+		return ;
+	}
+	while (i < b.size[0])
+	{
+		ft_printf("b.tab[%d] = %d\n", i, b.tab[i]);
+		i++;
+	}
+	ft_printf("\n");
+}
+
+void	stack_who_push(t_stack a)
+{
+	int	i;
+
+	i = 0;
+	while (i < a.size[0])
+	{
+		a.tab[i] = a.tab[i + 1];
+		i++;
+	}
+	a.tab[i] = 0;
+	a.size[0] -= 1;
+}
+
+void	pa_push_a(t_stack a, t_stack b)
+{
+	int	i;
+
+	i = a.size[0] - 1;
+	if (b.size[0] == 0)
+		return ;
+	if (a.size[0] == 0 || a.size[0] == 1)
+	{
+		if (a.size[0] == 1)
+			a.tab[1] = a.tab[0];
+		a.tab[0] = b.tab[0];
+		a.size[0] += 1;
+		stack_who_push(b);
+		return ;
+	}
 	while (i >= 0)
 	{
-		z.tab[i + 1] = z.tab[i];
+		a.tab[i + 1] = a.tab[i];
 		i--;
 	}
-	z.tab[0] = y.tab[0];
-	z.size[0] += 1;
-	//stack_who_pushed(y);
+	a.tab[0] = b.tab[0];
+	a.size[0] += 1;
+	stack_who_push(b);
+	return ;
 }
 
 void	pb_push_b(t_stack a, t_stack b)
 {
-	int	j;
+	int	i;
 
-	j = b.size[0] - 1;
+	i = b.size[0] - 1;
 	if (a.size[0] == 0)
 		return ;
-	if (b.size[0] == 0)
+	if (b.size[0] == 0 || b.size[0] == 1)
 	{
+		if (b.size[0] == 1)
+			b.tab[1] = b.tab[0];
 		b.tab[0] = a.tab[0];
 		b.size[0] += 1;
-		stack_who_pushed(a);
+		stack_who_push(a);
 		return ;
 	}
-	else if (b.size[0] == 1)
+	while (i >= 0)
 	{
-		j = 0;
-		b.tab[j + 1] = b.tab[j];
-		b.tab[0] = a.tab[0];
-		b.size[0] += 1;
-		stack_who_pushed(a);
-		return ;
+		b.tab[i + 1] = b.tab[i];
+		i--;
 	}
-	stack_who_been_pushed(a, b);
-	stack_who_pushed(a);
+	b.size[0] += 1;
+	b.tab[0] = a.tab[0];
+	stack_who_push(a);
+	return ;
 }
-
+/*
 int	main(void)
 {
-	// adapter tout ce int main aux struct t_stack a et b et tester push_b
-	t_stack	a;
-	t_stack	b;
-
-	int	tab[] = {9, 2, 0, 1, 3};
-	int	*tab2 = (int *)malloc(sizeof(int) * (a.size[0] + 1));
-	int	size_tab[] = {5};
-
-	a.tab = tab;
-	a.size = size_tab;
+	t_stack a;
+	t_stack b;
+	int	tab1[] = {9, 2, 3, 0, 667};
+	int	size1[] = {5};
+	a.tab = tab1;
+	a.size = size1;
+	int	*tab2 = (int *)malloc(sizeof(int) * a.size[0]);
 	b.tab = tab2;
-
-	ft_putint(a.tab, a.size[0]);
-	ft_printf("\n");
+	
+	aff_a(a);
 	pb_push_b(a, b);
-	ft_putint(a.tab, a.size[0]);
-	ft_printf("\n");
-	ft_putint(b.tab, b.size[0]);
-	ft_printf("\n");
+	aff_b(b);
+	aff_a(a);
 	pb_push_b(a, b);
-	ft_putint(a.tab, a.size[0]);
-	ft_printf("\n");
-	ft_printf("\n");
-	ft_putint(b.tab, b.size[0]);
-	ft_printf("\n");
+	aff_b(b);
+	aff_a(a);
 	pb_push_b(a, b);
-	ft_putint(a.tab, a.size[0]);
-	ft_printf("\n");
-	ft_putint(b.tab, b.size[0]);
+	aff_b(b);
+	aff_a(a);
 	pb_push_b(a, b);
-	ft_putint(a.tab, a.size[0]);
-	ft_printf("\n");
-	ft_putint(b.tab, b.size[0]);
-
+	aff_b(b);
+	aff_a(a);
+	pb_push_b(a, b);
+	aff_b(b);
+	ft_printf("a.size[0] = %d\n", a.size[0]);
+	aff_a(a);
+	pb_push_b(a, b);
+	aff_b(b);
+	aff_a(a);
+	ft_printf("FINITO AU SUIVANT\n\n");
+	pa_push_a(a, b);
+	aff_a(a);
+	aff_b(b);
+	pa_push_a(a, b);
+	aff_a(a);
+	aff_b(b);
+	pa_push_a(a, b);
+	aff_a(a);
+	aff_b(b);
+	pa_push_a(a, b);
+	aff_a(a);
+	aff_b(b);
+	pa_push_a(a, b);
+	aff_a(a);
+	aff_b(b);
+	pa_push_a(a, b);
+	aff_a(a);
+	aff_b(b);
+	pa_push_a(a, b);
+	aff_a(a);
+	aff_b(b);
+	pa_push_a(a, b);
+	aff_a(a);
+	aff_b(b);
 }
-
+*/
 /*
 int 	main(void)
 {
