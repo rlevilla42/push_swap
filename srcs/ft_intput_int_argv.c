@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 22:07:03 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/04 19:14:33 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/10 16:28:15 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,21 @@ int	*ft_intput_int_argv(int argc, char **argv)
 {
 	int	*tab;
 	int	i;
-	int	j;
 
-	i = argc - 1;
-	j = 0;
+	i = 0;
 	tab = (int *)malloc(sizeof(int) * (argc - 1));
 	//ft_printf("argc = %d\n\n", argc);
-	while (i > 0)
+	while (i < argc - 1)
 	{
-		tab[j] = ft_atoi(argv[i]);
-		j++;
-		i--;
+		tab[i] = ft_atoi(argv[i + 1]);
+		i++;
 	}
 	return (tab);
 }
 /*
 int	main(int argc, char **argv)
 {
-	int *tab = ft_input_int_argv(argc, argv);
+	int *tab = ft_intput_int_argv(argc, argv);
 	ft_putint_argv(tab, argc);
 	return (0);
 }*/

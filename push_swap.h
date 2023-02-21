@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:59:53 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/07 18:51:05 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:25:06 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "libft/libft.h"
+
+typedef struct s_stack
+{
+	int	*tab;
+	int	*size;
+}	t_stack;
 
 void	ft_putint(int *tab, int size);
 void	ft_putint_str(int *tab);
@@ -43,11 +49,15 @@ char	**argv_to_split(int argc, char **argv);
 char	**one_str_to_split(char *str);
 int		size_tab(int argc, char **argv);
 int		*ft_split_to_int(int argc, char **argv);
-int		*ft_convert_tab_to_index(int *tab, int size);
-int		*final_tab(int *tab, int size);
-int		*ft_sort_tabcpy(int *tab, int size);
+int		*ft_convert_tab_to_index(int *tab, int size_a);
+int		*final_tab(int argc, char **argv, int size_a);
+int		*ft_sort_tabcpy(int *tab, int size_a);
 int		a_is_sorted(int *tab, int size);
 int		ft_tabsize(int *tab);
-int		*swap(int *tab);
+void	sa_swap_a(int *tab);
+void	sb_swap_b(int *tab);
+void	ss_swap_ss(int *tab1, int  *tab2);
+void	pb_push_b(t_stack a, t_stack b);
+void	pa_push_a(t_stack a, t_stack b);
 
 #endif

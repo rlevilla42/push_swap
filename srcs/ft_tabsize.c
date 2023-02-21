@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:50:19 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/07 17:00:38 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/19 20:51:20 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ int	ft_tabsize(int *tab)
 int main(void)
 {
 	int	tab[] = {4, 0, 1, 2, 3, -1};
+	//int	*tab2 = (int *)malloc(sizeof(int) * 6);
+	int	*tab2;
 	ft_printf("%d\n", ft_tabsize(tab));
 }*/

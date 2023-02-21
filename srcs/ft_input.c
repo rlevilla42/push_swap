@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 20:59:23 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/04 23:38:40 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:29:29 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ int	size_tab(int argc, char **argv)
 {
 	int	j;
 	char	**pstr;
+	//int	*size;
 
+	//size = (int *)malloc(sizeof(int) * 1);
 	j = 0;
 	if (argc == 2)
 		pstr = one_str_to_split(argv[1]);
@@ -68,11 +70,11 @@ int	*ft_split_to_int(int argc, char **argv)
 	else
 		ptrstr = argv_to_split(argc, argv);
 	tab = (int *)malloc(sizeof(int) * j);
-	j -= 1;
-	while (j >= 0)
+	//j -= 1;
+	while (ptrstr[i] != NULL)
 	{
-		tab[i] = ft_atoi(ptrstr[j]);
-		j--;
+		tab[i] = ft_atoi(ptrstr[i]);
+		//j--;
 		i++;
 	}
 	return (tab);
@@ -85,12 +87,13 @@ int	*ft_input(int argc, char **argv)
 /*
 int	main(int argc, char **argv)
 {
-	int	*tab = ft_intput(argc, argv);
+	int	*tab = ft_input(argc, argv);
 	int	n = size_tab(argc, argv);
-	int	i = 0;
-	while (i < n)
+	int	i = n;
+	ft_putint(tab, n);
+	while (i < (n + 6))
 	{
-		ft_printf("tab[%d] = %d\n", i, tab[i]);
+		ft_printf("tab[BONUS %d] = %d\n", i, tab[i]);
 		i++;
 	}
 	return (0);
