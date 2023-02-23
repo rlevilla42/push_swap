@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:59:53 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/21 22:33:00 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:14:29 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,8 @@ void	ss_swap_ss(t_stack a, t_stack b);
 void	pb_push_b(t_stack a, t_stack b);
 void	pa_push_a(t_stack a, t_stack b);
 int		*ft_ptrsize_tab(int argc, char **argv);
-
+void	aff_stack(t_stack a, t_stack b);
+void	aff_a(t_stack a);
+void	aff_b(t_stack b);
+int		*bsize(int argc, char **argv);
 #endif

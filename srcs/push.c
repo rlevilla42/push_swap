@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:26:51 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/21 21:39:22 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/23 23:24:52 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,18 @@ void	aff_b(t_stack b)
 	ft_printf("\n");
 }
 
-void	stack_who_push(t_stack a)
+void	stack_who_push(t_stack x)
 {
 	int	i;
 
 	i = 0;
-	while (i < a.size[0])
+	while (i < x.size[0])
 	{
-		a.tab[i] = a.tab[i + 1];
+		x.tab[i] = x.tab[i + 1];
 		i++;
 	}
-	a.tab[i] = 0;
-	a.size[0] -= 1;
+	x.tab[i] = 667;
+	x.size[0] -= 1;
 }
 
 void	pa_push_a(t_stack a, t_stack b)
@@ -80,8 +80,8 @@ void	pa_push_a(t_stack a, t_stack b)
 		a.tab[i + 1] = a.tab[i];
 		i--;
 	}
-	a.tab[0] = b.tab[0];
 	a.size[0] += 1;
+	a.tab[0] = b.tab[0];
 	stack_who_push(b);
 	return ;
 }
@@ -112,6 +112,29 @@ void	pb_push_b(t_stack a, t_stack b)
 	stack_who_push(a);
 	return ;
 }
+/*
+int	main(int argc, char **argv)
+{
+	t_stack	a;
+	t_stack	b;
+	//int	*tab2;
+	//int	size1[] = {0};
+
+	if (ft_check_error(argc, argv) == 0)
+		return (0);
+	a.size = ft_ptrsize_tab(argc, argv);
+	b.tab = (int *)malloc(sizeof(int) * a.size[0]);
+	b.size = bsize(argc, argv);
+	ft_printf("B.SIZE[0] = %d\n\n", b.size[0]);
+	ft_printf("%d\n", a.size[0]);
+	a.tab = final_tab(argc, argv, a.size[0]);
+	if (a_is_sorted(a.tab, a.size[0]) == 1)
+		return (0);
+	aff_stack(a, b);
+	pb_push_b(a, b);
+	aff_stack(a, b);
+	return (0);
+}*/
 /*
 int	main(void)
 {
