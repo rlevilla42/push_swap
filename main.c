@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:43:26 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/23 23:10:06 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/28 14:48:53 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,44 +55,22 @@ int	main(int argc, char **argv)
 	if (a_is_sorted(a.tab, a.size[0]) == 1)
 		return (0);
 	aff_stack(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
+	/*full_push_b(a, b, 6);
 	aff_stack(a, b);
-	pa_push_a(a, b);
-	/*pa_push_a(a, b);
-	pa_push_a(a, b);
-	pa_push_a(a, b);
-	pa_push_a(a, b);
-	pa_push_a(a, b);
-	pa_push_a(a, b);
-	pa_push_a(a, b);
-	pa_push_a(a, b);
-	pa_push_a(a, b);
-	pa_push_a(a, b);
-	pa_push_a(a, b);
+	rotate_b(b);
+	rotate_a(a);
 	aff_stack(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);
-	pb_push_b(a, b);*/
+	r_rotate(a, b);
 	aff_stack(a, b);
+	reverse_rotate_a(a);
+	reverse_rotate_b(b);
+	aff_stack(a, b);
+	r_reverse_rotate(a, b);
+	r_reverse_rotate(a, b);
+	r_reverse_rotate(a, b);
+	r_reverse_rotate(a, b);
+	aff_stack(a, b);
+	full_push_a(a, b, 6);
+	aff_stack(a, b);*/
 	return (0);
 }

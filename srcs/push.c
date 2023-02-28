@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:26:51 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/23 23:24:52 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/23 23:46:36 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	stack_who_push(t_stack x)
 		x.tab[i] = x.tab[i + 1];
 		i++;
 	}
-	x.tab[i] = 667;
+	//x.tab[i] = 667;
 	x.size[0] -= 1;
 }
 
@@ -73,6 +73,7 @@ void	pa_push_a(t_stack a, t_stack b)
 		a.tab[0] = b.tab[0];
 		a.size[0] += 1;
 		stack_who_push(b);
+		ft_printf("pa\n");
 		return ;
 	}
 	while (i >= 0)
@@ -83,6 +84,7 @@ void	pa_push_a(t_stack a, t_stack b)
 	a.size[0] += 1;
 	a.tab[0] = b.tab[0];
 	stack_who_push(b);
+	ft_printf("pa\n");
 	return ;
 }
 
@@ -100,6 +102,7 @@ void	pb_push_b(t_stack a, t_stack b)
 		b.tab[0] = a.tab[0];
 		b.size[0] += 1;
 		stack_who_push(a);
+		ft_printf("pb\n");
 		return ;
 	}
 	while (i >= 0)
@@ -110,6 +113,7 @@ void	pb_push_b(t_stack a, t_stack b)
 	b.size[0] += 1;
 	b.tab[0] = a.tab[0];
 	stack_who_push(a);
+	ft_printf("pb\n");
 	return ;
 }
 /*

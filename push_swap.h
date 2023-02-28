@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:59:53 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/23 16:14:29 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/02/26 20:13:39 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,12 @@ void	aff_stack(t_stack a, t_stack b);
 void	aff_a(t_stack a);
 void	aff_b(t_stack b);
 int		*bsize(int argc, char **argv);
+void	rotate_a(t_stack a);
+void	rotate_b(t_stack b);
+void	r_rotate(t_stack a, t_stack b);
+void	full_push_a(t_stack a, t_stack b, int fois);
+void	full_push_b(t_stack a, t_stack b, int fois);
+void	reverse_rotate_a(t_stack a);
+void	reverse_rotate_b(t_stack b);
+void	r_reverse_rotate(t_stack a, t_stack b);
 #endif
