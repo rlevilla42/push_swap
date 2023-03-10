@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:59:53 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/02/26 20:13:39 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/03/11 00:02:24 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,7 @@ void	full_push_b(t_stack a, t_stack b, int fois);
 void	reverse_rotate_a(t_stack a);
 void	reverse_rotate_b(t_stack b);
 void	r_reverse_rotate(t_stack a, t_stack b);
+void	sort_first(t_stack a, t_stack b);
+void	big_sort(t_stack a, t_stack b);
+void	little_sort(t_stack a, t_stack b);
 #endif
