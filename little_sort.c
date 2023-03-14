@@ -6,7 +6,7 @@
 /*   By: rlevilla <rlevilla@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 19:57:13 by rlevilla          #+#    #+#             */
-/*   Updated: 2023/03/11 00:02:02 by rlevilla         ###   ########.fr       */
+/*   Updated: 2023/03/12 15:47:12 by rlevilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	sort_five(t_stack a, t_stack b)
 		rotate_a(a);
 	pb_push_b(a, b);
 	sort_three_custom(a, b);
+	full_push_a(a, b, b.size[0]);
 }
 
 void	little_sort(t_stack a, t_stack b)
